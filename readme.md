@@ -4,6 +4,8 @@ This is my Bachelor’s thesis and work. The subject was to find a way to detect
 
 My thesis is in French and I made her with LaTex during my B.Sc. at the *Haute école du paysage, d’ingénierie et d’architecture de Genève (HEPIA)* at Geneva in Switzerland.
 
+For this work I obtained a grade of 6 out of 6 as well as the congratulations of the jury and the price of the swiss IT society romande section (SISR).
+
 ## Author
 
 Jean-Daniel Küenzi - jeandanielkuenzi@gmail.com
