@@ -14,7 +14,7 @@ In recent years, Artificial Intelligence (AI) has only progressed and revolution
 
 ## Conda environement
 
-For this work, I used an conda environement with the following packages:
+For this work, I used a conda environement with the following packages:
 
 Name | Version
 :-:|:-:
