@@ -1,0 +1,11 @@
+name: pytorch-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - pyaudio=0.2.11
+  - tk=8.6.10
+  - librosa=0.8.1
+  - pytorch=1.8.1
+  - cudatoolkit=10.2.89
+  - tqdm=4.61.1

@@ -1,0 +1,17 @@
+% !TeX spellcheck = fr_FR
+\chapter{Chapitre 1 : Analyse de l'existant}
+\label{chap:1}
+
+Lors de mes recherches de solutions similaires, j'ai notamment retenu deux travaux utilisant des réseaux de neurones afin de détecter en temps réel des accords de guitare, Chord AI\footnote{\url{https://www.chordai.net/}} et Uberchord\footnote{\url{https://www.uberchord.com/}}. L'un deux a été développé en collaboration avec l'\gls{epfl}.
+
+\section{Chord AI}
+\label{sec:1.1}
+
+Chord AI est une application Android et iOS qui a été développée par Vivien \textsc{Seguy}\footnote{\url{https://vivienseguy.github.io/}}, le CEO de Nomad AI\footnote{\url{https://www.nomadai.org/}}, avec la collaboration de Guillaume \textsc{Bellec}\footnote{\url{http://guillaume.bellec.eu/}}, un chercheur postdoctorant à l'\gls{epfl}. Lors de sa création, l'application était capable de reconnaitre les accords majeurs et mineurs. À ce jour, elle a été améliorée et est maintenant capable de reconnaitre plus de 500 accords sans compter les inversions. Elle propose aussi une reconnaissance de clés basée sur les accords détectés. Toutefois, elle n'est pas capable de reconnaitre les notes de musique.
+
+J'ai notamment pu tester l'application et lors de mon utilisation, j'ai constaté qu'elle enregistrait en temps réel ce que je jouais mais qu'il y avait un décalage de \textasciitilde$1/2$[s] entre le moment où je jouais l'accord et la prédiction de celui-ci. Afin de comprendre pourquoi ce décalage avait lieu, j'ai contacté Vivien \textsc{Seguy} et il a accepté de s'entretenir avec moi afin de discuter du fonctionnement de l'application. Il m'a expliqué qu'elle utilise un \gls{rnr} pour la prédiction des accords et que la taille des fenêtres utilisée est de \textasciitilde$0.4$[s] échantillonnée à 22.05[kHz]. Ce qui représente à peu près une fenêtre de $8820$ échantillons. Les différentes fenêtres se chevauchent de \textasciitilde$0.2$[s]. Une \gls{tfct} va être appliquée sur la fenêtre lors du prétraitement ce qui va nous créer une image 2D, qu'on appel un spectrogramme. Cette image traversera un petit \gls{rnc} avant de traverser le \gls{rnr} afin de faire la prédiction de l'accord.
+
+\section{Uberchord}
+\label{sec:1.2}
+
+Uberchord est une application iOS qui permet d'apprendre à jouer de la guitare de manière autodidacte. Elle propose notamment un système de suivi personnalisé en temps réel entièrement géré par une \gls{ia}. Elle possède aussi une fonctionnalité de détection d'accords en temps réel. L'\gls{ia} serait apparemment capable de prédire n'importe quels accords en temps réel et dans 19 accordages de guitare différents. Toutefois, il ne semble pas y avoir de fonctionnalité capable de reconnaitre les notes de musique.
